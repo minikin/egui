@@ -239,6 +239,28 @@ impl Sub for Vec2 {
     }
 }
 
+/// Element-wise multiplication
+impl Mul<Vec2> for Vec2 {
+    type Output = Vec2;
+    fn mul(self, vec: Vec2) -> Vec2 {
+        Vec2 {
+            x: self.x * vec.x,
+            y: self.y * vec.y,
+        }
+    }
+}
+
+/// Element-wise division
+impl Div<Vec2> for Vec2 {
+    type Output = Vec2;
+    fn div(self, rhs: Vec2) -> Vec2 {
+        Vec2 {
+            x: self.x / rhs.x,
+            y: self.y / rhs.y,
+        }
+    }
+}
+
 impl MulAssign<f32> for Vec2 {
     fn mul_assign(&mut self, rhs: f32) {
         self.x *= rhs;
